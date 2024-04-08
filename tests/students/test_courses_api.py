@@ -30,7 +30,6 @@ def course_factory():
 def test_get_first_course(client, course_factory, student_factory):
     course = course_factory(_quantity=1)
     course_id = str(course[0].id)
-    print(course_id)
 
     url = reverse('courses-detail', args=(course_id,))
     response = client.get(url)
